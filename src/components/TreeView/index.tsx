@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { VariableSizeList as List } from "react-window";
 import {
 	AlertIcon,
 	AssetIcon,
@@ -50,11 +49,13 @@ export function TreeNode({ node, ...rest }) {
 				{status === "alert" && <AlertIcon />}
 			</div>
 			{isArray(node) && showChildren && (
-				<List itemCount={children.length} height={200} itemSize={getItemSize} width={"100%"}>
-					{renderRow}
-				</List>
+				// <List itemCount={children.length} height={200} itemSize={getItemSize} width={"100%"}>
+				// 	{renderRow}
+				// </List>
 
-				// <ul className="list-none list-image-none ml-2 transition-all">{showChildren && children.map((c) => <TreeNode node={c} />)}</ul>
+				<ul className="list-none list-image-none ml-2 transition-all">
+					{showChildren && children.map((c) => <TreeNode node={c} />)}
+				</ul>
 			)}
 			{/* {isArray(node) && <ul className="list-none list-image-none ml-2">{showChildren && <Tree item={node} />}</ul>} */}
 		</div>
