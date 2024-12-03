@@ -116,7 +116,7 @@ export default function Home() {
 			<div id="mainHeader" className="flex justify-between items-center">
 				<div className="flex gap-2 items-center">
 					<span className="text-bold text-lg text-blac">Ativos</span>
-					<span className="text-gray-400">/ {selectedCompany?.name} Unit</span>
+					{selectedCompany && <span className="text-gray-400">/ {selectedCompany?.name} Unit</span>}
 				</div>
 				<div className="flex gap-2 items-center">
 					<Button
