@@ -5,7 +5,7 @@ import {
 	buildTreeViewAssetsAndComponents,
 	buildTreeViewLocationsByParentId,
 	concatenateTrees,
-} from "../../utils/treeViewFormatForeach";
+} from "../../utils/treeViewFormat";
 
 type CompanyDetails = {
 	locations: Locations;
