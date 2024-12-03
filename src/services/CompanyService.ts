@@ -11,7 +11,7 @@ export const getAllCompanies = async () => {
 	return { data, status, ok, statusText, headers, url };
 };
 export const getCompanyLocationsById = async ({ companyId }: { companyId: string }) => {
-	const response = await fetch(`${baseUrl}/companies/${companyId}/locations`);
+	const response = await fetch(`${baseUrl}/companies/${companyId}/locations`, { cache: "force-cache" });
 
 	const data: Locations = await response.json();
 	const { status, ok, statusText, headers, url } = response;
@@ -19,7 +19,7 @@ export const getCompanyLocationsById = async ({ companyId }: { companyId: string
 	return { data, status, ok, statusText, headers, url };
 };
 export const getCompanyAssetsById = async ({ companyId }: { companyId: string }) => {
-	const response = await fetch(`${baseUrl}/companies/${companyId}/assets `);
+	const response = await fetch(`${baseUrl}/companies/${companyId}/assets `, { cache: "force-cache" });
 
 	const data: Assets = await response.json();
 	const { status, ok, statusText, headers, url } = response;

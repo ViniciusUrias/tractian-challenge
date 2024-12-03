@@ -11,6 +11,7 @@ export interface Location {
 	id: string;
 	name: string;
 	parentId?: string;
+	children?: Asset[] | Location[];
 }
 
 export type Assets = Asset[];
@@ -24,4 +25,8 @@ export interface Asset {
 	status?: string;
 	gatewayId?: string;
 	sensorId?: string;
+	type?: string;
+	children?: Asset[] | Location[];
 }
+
+export type Item = Asset & Location & { isOpen?: boolean };
